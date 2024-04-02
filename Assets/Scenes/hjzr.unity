@@ -541,13 +541,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f8e8dd015ee5a47a3802c582895dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 7
   groundDrag: 5
-  _playerHeight: 2
-  _whatIsGround:
+  playerHeight: 2
+  whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  grounded: 1
-  speed: 7
+  isGrounded: 0
   orientation: {fileID: 1970769649}
 --- !u!4 &1239805626
 Transform:

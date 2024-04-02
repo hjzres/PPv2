@@ -11,13 +11,14 @@ namespace Player
 	{
 		PlayerInput _playerInput;
 		InputAction _moveAction;
+		[SerializeField] float speed;
 		
 		[SerializeField] private float groundDrag;
-		[SerializeField] private float _playerHeight;
-		[SerializeField] private LayerMask _whatIsGround;
-		[SerializeField] bool grounded;
+		[SerializeField] private float playerHeight;
+		[SerializeField] private LayerMask whatIsGround;
+		[SerializeField] bool isGrounded;
 		
-		[SerializeField] float speed;
+		
 		[SerializeField] Transform orientation;
 		
 		private Rigidbody _rb;
@@ -28,14 +29,14 @@ namespace Player
 			_playerInput = GetComponent<PlayerInput>();
 			_moveAction = _playerInput.actions.FindAction("Move");
 			_rb = GetComponent<Rigidbody>();
-			grounded = true;
+			isGrounded = true;
 		}
 
 		void Update()
 		{
-			grounded = Physics.Raycast(transform.position, Vector3.down, _playerHeight * 0.5f + 0.2f, _whatIsGround);
+			isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 			
-			if(grounded)
+			if(isGrounded)
 				_rb.drag = groundDrag;
 			else
 				_rb.drag = 0;
