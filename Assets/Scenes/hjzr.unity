@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 1203980241}
   - component: {fileID: 1203980240}
   - component: {fileID: 1203980239}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,9 +462,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1239805626}
+  - component: {fileID: 1239805623}
   - component: {fileID: 1239805625}
   - component: {fileID: 1239805624}
-  - component: {fileID: 1239805623}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -497,7 +497,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 1
 --- !u!114 &1239805624
 MonoBehaviour:
@@ -541,6 +541,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f8e8dd015ee5a47a3802c582895dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundDrag: 5
+  _playerHeight: 2
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  grounded: 1
+  speed: 7
+  orientation: {fileID: 1970769649}
 --- !u!4 &1239805626
 Transform:
   m_ObjectHideFlags: 0
@@ -740,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cc2af01cbf5474180cfb2781adeef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sense: 10
+  Sense: 100
   orientation: {fileID: 1970769649}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
