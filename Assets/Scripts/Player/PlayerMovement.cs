@@ -1,9 +1,10 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player
 {
-	public class PlayerMovement : MonoBehaviour
+	public class PlayerMovement : NetworkBehaviour
 	{
 		PlayerInput _playerInput;
 		InputAction _moveAction;
@@ -31,6 +32,8 @@ namespace Player
 		
 		void Awake()
 		{
+			if(!IsOwner) return;
+			
 			_playerInput = GetComponent<PlayerInput>();
 			_rb = GetComponent<Rigidbody>();
 			
@@ -45,6 +48,8 @@ namespace Player
 
 		void Update()
 		{
+			if(!IsOwner) return;
+			
 			isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 			
 			if(isGrounded)
@@ -64,6 +69,8 @@ namespace Player
 		
 		void FixedUpdate()
 		{
+			if(!IsOwner) return;
+			
 			MovePlayer();
 		}
 		

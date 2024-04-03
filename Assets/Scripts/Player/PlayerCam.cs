@@ -1,7 +1,8 @@
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Player{
-	public class PlayerCam : MonoBehaviour
+	public class PlayerCam : NetworkBehaviour
 	{
 		public float Sense;
 		
@@ -12,12 +13,16 @@ namespace Player{
 		
 		void Awake()
 		{
+			if(!IsOwner) return;
+			
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
 		
 		void Update()
 		{
+			if(!IsOwner) return;
+			
 			float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * Sense;
 			float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * Sense;
 			
