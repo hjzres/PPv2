@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Callbacks;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.UIElements.Experimental;
 
 namespace Player
 {
