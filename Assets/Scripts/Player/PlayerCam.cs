@@ -11,10 +11,8 @@ namespace Player{
 		private float _xRotation;
 		private float _yRotation;
 		
-		void Awake()
+		void Start()
 		{
-			if(!IsOwner) return;
-			
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
 		}
