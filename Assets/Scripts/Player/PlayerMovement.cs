@@ -98,7 +98,7 @@ namespace Player
 		
 		private void Jump()
 		{
-			_rb.velocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.y);
+			_rb.velocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
 			
 			_rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 		}
